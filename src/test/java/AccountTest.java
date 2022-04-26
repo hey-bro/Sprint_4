@@ -1,12 +1,12 @@
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-class AccountTest {
+public class AccountTest {
 
     @Test
-    void putBlankFIO() {
+    public void putBlankFIOTest() {
         String fio = new String("");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -14,7 +14,7 @@ class AccountTest {
     }
 
     @Test
-    void put2SymbolsFIO() {
+    public void put2SymbolsFIOTest() {
         String fio = new String("Ин");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -22,7 +22,7 @@ class AccountTest {
     }
 
     @Test
-    void put20SymbolsFIO() {
+    public void put20SymbolsFIOTest() {
         String fio = new String("Константинополь Иван");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -30,7 +30,7 @@ class AccountTest {
     }
 
     @Test
-    void fioStartsWithWhitespace() {
+    public void fioStartsWithWhitespaceTest() {
         String fio = new String(" Иван Иванов");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -38,7 +38,7 @@ class AccountTest {
     }
 
     @Test
-    void fioEndsWithWhitespace() {
+    public void fioEndsWithWhitespaceTest() {
         String fio = new String("Иван Иванов ");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -46,7 +46,7 @@ class AccountTest {
     }
 
     @Test
-    void fioContains2Whitespaces() {
+    public void fioContains2WhitespacesTest() {
         String fio = new String("Иван  Иванов");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
@@ -54,7 +54,7 @@ class AccountTest {
     }
 
     @Test
-    void fioMeetsRequirements() {
+    public void fioMeetsRequirementsTest() {
         String fio = new String("Марк Глушков");
         Account account = new Account(fio);
         boolean actual = account.checkNameToEmboss();
